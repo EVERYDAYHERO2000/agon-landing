@@ -1,8 +1,33 @@
 .screen {
     width: 50vw;
     max-width: 750px;
+    margin-bottom: -10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 580px;
+        position: relative;
+    }
+
+    &__shadow {
+        position: absolute;
+        z-index: 1;
+        top: 9.5vw;
+        height: 300px;
+        width: 80%;
+        border-radius: 6vw;
+        box-shadow: 0 0 10vw rgba(0, 0, 0, 0.8), 0 0 8vw rgba(0, 0, 0, 0.8);
+    }
 
     svg {
-        transform: translateY(-10vh);
+        position: relative;
+        //transform: translateY(-5vh);
+        z-index: 2;
     }
 }

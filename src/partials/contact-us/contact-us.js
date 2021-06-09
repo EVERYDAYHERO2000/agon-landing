@@ -37,10 +37,7 @@ export const renderContactUs = () => {
                 antialias: true,
                 alpha: true
             }),
-            simplex = new SimplexNoise();
-
-            
-        console.log($parent.width, $parent.height);    
+            simplex = new SimplexNoise();   
 
         renderer.setSize($parent.offsetWidth, $parent.offsetHeight);
         renderer.setPixelRatio(window.devicePixelRatio || 1);

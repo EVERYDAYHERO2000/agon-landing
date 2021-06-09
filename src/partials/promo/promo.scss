@@ -1,6 +1,7 @@
 .promo {
     position: relative;
     overflow: hidden;
+    margin-bottom: -10vh;
 
     @media not all and (min-resolution:.001dpcm){
         @supports (-webkit-appearance:none) {

@@ -1,0 +1,9 @@
+.page {
+    display: flex;
+    justify-content: center;
+
+    &__inner {
+        max-width: 1500px;
+        width: 100%;
+    }
+}

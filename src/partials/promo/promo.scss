@@ -1,0 +1,35 @@
+.promo {
+    position: relative;
+    overflow: hidden;
+
+    @media not all and (min-resolution:.001dpcm){
+        @supports (-webkit-appearance:none) {
+            position: sticky;
+        }
+    }
+
+    &__content {
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+    }
+
+    &__cover {
+        position: absolute;
+        z-index: 1;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    &__canvas {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}

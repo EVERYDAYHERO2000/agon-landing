@@ -1,0 +1,33 @@
+.feature {
+    display: flex;
+    align-items: center;
+    position: relative;
+    min-height: 150vh;
+
+    .card {
+        
+    }
+
+    &_position {
+
+        &--left {
+            justify-content: flex-start;
+
+            .card {
+    
+            }
+        }
+
+        &--right {
+            justify-content: flex-end;
+
+            .card {
+
+            }
+
+            .screen {
+                order: -1;
+            }
+        }
+    }
+}

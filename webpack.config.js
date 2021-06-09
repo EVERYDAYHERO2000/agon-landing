@@ -9,6 +9,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HandlebarsPlugin = require("handlebars-webpack-plugin");
 const { extendDefaultPlugins } = require('svgo');
 
 const environment = require('./configuration/environment');
@@ -21,12 +22,12 @@ const htmlPluginEntries = templateFiles.map((template) => new HTMLWebpackPlugin(
   hash: false,
   filename: template,
   template: path.resolve(environment.paths.source, template),
-  favicon: path.resolve(environment.paths.source, 'images', 'favicon.ico'),
+  favicon: path.resolve(environment.paths.source, 'assets', 'favicon.ico'),
 }));
 
 module.exports = {
   entry: {
-    app: path.resolve(environment.paths.source, 'js', 'app.js'),
+    app: path.resolve(environment.paths.source, 'app.js'),
   },
   output: {
     filename: 'js/[name].js',
@@ -105,8 +106,8 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(environment.paths.source, 'images', 'content'),
-          to: path.resolve(environment.paths.output, 'images', 'content'),
+          from: path.resolve(environment.paths.source, 'assets'),
+          to: path.resolve(environment.paths.output, 'assets'),
           toType: 'dir',
           globOptions: {
             ignore: ['*.DS_Store', 'Thumbs.db'],

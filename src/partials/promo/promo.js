@@ -13,7 +13,7 @@ import {
 
 import useThree from "./useThree.js";
 
-export const renderCanvas = () => {
+export const renderPromo = () => {
 
   const browser = Bowser.getParser(window.navigator.userAgent);
 
@@ -21,8 +21,8 @@ export const renderCanvas = () => {
 
   function App() {
     const images = [
-      { src: "assets/cover/cover_1.png" },
-      { src: "assets/cover/cover_2.png" }
+      { src: "assets/cover/cover_2.png" },  
+      { src: "assets/cover/cover_1.png" }
     ];
 
     let three, scene;
@@ -30,7 +30,10 @@ export const renderCanvas = () => {
     let progress = 0,
       targetProgress = 0,
       prevent = 1,
-      center = new Vector2();
+      center = new Vector2(),
+      animTrigger = (window.scrollY > windowHeight) ? false : true,
+      windowWidth = window.innerWidth,
+      windowHeight = window.innerHeight;
     const loader = new TextureLoader();
 
     init();
@@ -72,8 +75,7 @@ export const renderCanvas = () => {
 
     function initListeners() {
       window.addEventListener("wheel", (e) => {
-        
-        if (browser.parsedResult.browser.name !== 'Safari') {
+        //if (browser.parsedResult.browser.name !== 'Safari') {
 
             if (e.deltaY > 0) {
             setTargetProgress(targetProgress + 1 / 20);
@@ -81,9 +83,13 @@ export const renderCanvas = () => {
             setTargetProgress(targetProgress - 1 / 20);
             }
 
-        }
+        //}
         
         
+      });
+
+      document.addEventListener("scroll", (e) => {
+        animTrigger = (window.scrollY > windowHeight) ? false : true ;
       });
 
       document.addEventListener("click", (e) => {
@@ -146,18 +152,21 @@ export const renderCanvas = () => {
       image2.uStrength.value = -1 + progress;
     }
 
+
     function animate() {
       requestAnimationFrame(animate);
       const { renderer, camera, cameraCtrl, mouse } = three;
 
-      center.copy(mouse).divideScalar(2).addScalar(0.5);
-      lerpv2(image1.uCenter.value, center, 0.1);
-      lerpv2(image2.uCenter.value, center, 0.1);
+      if (animTrigger){
+        center.copy(mouse).divideScalar(2).addScalar(0.5);
+        lerpv2(image1.uCenter.value, center, 0.1);
+        lerpv2(image2.uCenter.value, center, 0.1);
 
-      updateProgress();
+        updateProgress();
 
-      if (cameraCtrl) cameraCtrl.update();
-      renderer.render(scene, camera);
+        if (cameraCtrl) cameraCtrl.update();
+        renderer.render(scene, camera);
+      }
     }
 
     function loadTexture(img, index) {

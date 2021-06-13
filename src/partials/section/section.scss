@@ -1,0 +1,17 @@
+.section {
+
+    &_cover {
+
+    }
+
+    &_features {
+
+        @include sm {
+            position: relative;
+        }
+    }
+
+    &_contact-us {
+
+    }
+}

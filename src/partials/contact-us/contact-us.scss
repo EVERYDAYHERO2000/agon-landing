@@ -5,6 +5,11 @@
     box-sizing: border-box;
     pointer-events: none;
 
+    @include sm {
+        padding-top: 0;
+        height: 100vh;
+    }
+
     &__content {
         position: absolute;
         z-index: 2;
@@ -13,10 +18,15 @@
         display:flex;
         align-items: center;
         justify-content: center;
+        box-sizing: border-box;
+        text-align: center;
+
+        @include sm {
+            padding: 44px;
+        }
 
         h2 {
-            font-size: 6vw;
-            font-weight: 600;
+            
         }
     }
 

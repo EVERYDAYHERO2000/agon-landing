@@ -4,4 +4,8 @@ body {
 
     font-size: 2vw;
     line-height: 1.5;
+
+    @include sm {
+        font-size: 18px;
+    }
 }

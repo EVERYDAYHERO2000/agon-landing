@@ -19,26 +19,34 @@ import SimplexNoise from 'simplex-noise';
 
 export const renderContactUs = () => {
 
+    let $canvas = document.getElementById('blob'),
+    $parent = $canvas.parentElement,
+    renderer = new WebGLRenderer({
+        canvas: $canvas,
+        context: $canvas.getContext('webgl2'),
+        antialias: true,
+        alpha: true
+    }),
+    simplex = new SimplexNoise(); 
+
+    let animTrigger = isInViewport($canvas),
+        windowWidth = window.innerWidth,
+        windowHeight = windowHeight,
+        speed = 13,
+        spikesconst = 0.6,
+        processing = 1;
+    
+    function isInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (window.innerHeight <= (rect.top || rect.top + rect.height - 50)) ? false : true;
+    }
+
     new TextureLoader().load('assets/map_2.jpg', (t)=> {
         init(t);
     });
 
     function init(texture) {
     
-        let speed = 13,
-            spikesconst = 0.6,
-            processing = 1;
-    
-        let $canvas = document.getElementById('blob'),
-            $parent = $canvas.parentElement,
-            renderer = new WebGLRenderer({
-                canvas: $canvas,
-                context: $canvas.getContext('webgl2'),
-                antialias: true,
-                alpha: true
-            }),
-            simplex = new SimplexNoise();   
-
         renderer.setSize($parent.offsetWidth, $parent.offsetHeight);
         renderer.setPixelRatio(window.devicePixelRatio || 1);
 
@@ -138,6 +146,10 @@ export const renderContactUs = () => {
          onMouseUp(e);
      }, false);
  }
+
+ document.addEventListener("scroll", (e) => {
+    animTrigger = isInViewport($canvas);
+  });
  
      function rotateScene(deltaX, deltaY) {
      scene.rotation.y += deltaX / 100;
@@ -150,12 +162,14 @@ export const renderContactUs = () => {
          */
     
         function animate() {
-            update();
-            renderer.render(scene, camera);
+            if (animTrigger) {
+                update();
+                renderer.render(scene, camera);
+            }
             requestAnimationFrame(animate);
         }
     
-        requestAnimationFrame(animate);
+        animate();
 
     }    
     

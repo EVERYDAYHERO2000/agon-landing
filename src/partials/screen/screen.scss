@@ -6,6 +6,11 @@
     justify-content: center;
     align-items: center;
 
+    @include sm {
+        width: 100%;
+        margin-top: -70vh;
+    }
+
     &__inner {
         display: flex;
         justify-content: center;
@@ -23,11 +28,18 @@
         width: 80%;
         border-radius: 6vw;
         box-shadow: 0 0 10vw rgba(0, 0, 0, 0.8), 0 0 8vw rgba(0, 0, 0, 0.8);
+
+        @include sm {
+            top: 20.5vw;
+            border-radius: 44px;
+            height: 80%;
+        }
     }
 
     svg {
         position: relative;
         //transform: translateY(-5vh);
         z-index: 2;
+        width: 100%;
     }
 }

@@ -14,7 +14,7 @@ jobs:
     env:
       NODE_OPTIONS: "--max_old_space_size=4096"
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@main
       - name: Node version
         run: node -v
       - name: Use Node.js ${{ matrix.node-version }}
@@ -32,7 +32,7 @@ jobs:
           git branch -l
           git checkout -b gh-pages
           git branch -l
-          npm i
+          npm install
           npm production
           mv dist/* .
       - name: info

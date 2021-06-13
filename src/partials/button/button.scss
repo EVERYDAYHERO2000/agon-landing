@@ -2,17 +2,37 @@
 
     padding: 16px 32px;
     border-radius: 16px;
+    transition: color .2s, background-color .2s, border-color .2s, box-shadow .2s;
+    box-shadow: 0 0 0 rgba(0,0,0,0);
+    transform-origin: center;
 
     &_type {
         &--fill {
             color: $color-black;
             background-color: $color-active-first;
+
+            &:hover {
+                background-color: darken($color-active-first, 10%);
+            }
         }
 
         &--stroke {
             color: $color-active-first;
             background-color: transparent;
             border: 2px solid $color-active-first;
+
+            &:hover {
+                border: 2px solid darken($color-active-first, 10%);
+                color: darken($color-active-first, 10%);
+            }
         }
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 4px rgba($color-active-second, 0.3);
+    }
+
+    &:active {
+        transform: scale(0.99);
     }
 }

@@ -73,6 +73,16 @@
 
     }
 
+    &__scroll-arrow {
+        position: absolute;
+        bottom: 0;
+        z-index: 5;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 48px;
+    }
+
     h1 {
 
     }

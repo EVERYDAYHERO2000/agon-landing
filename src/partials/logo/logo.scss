@@ -1,0 +1,8 @@
+.logo {
+    height: 84px;
+    fill: #D5FC51;
+
+    @include sm {
+        height: 64px;
+    }
+}

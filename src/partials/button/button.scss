@@ -1,0 +1,18 @@
+.button {
+
+    padding: 16px 32px;
+    border-radius: 16px;
+
+    &_type {
+        &--fill {
+            color: $color-black;
+            background-color: $color-active-first;
+        }
+
+        &--stroke {
+            color: $color-active-first;
+            background-color: transparent;
+            border: 2px solid $color-active-first;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+.header {
+    position: absolute;
+    top:0;
+    z-index: 3;
+    padding: 6vh 6vw;
+    display: flex;
+    box-sizing: border-box;
+
+    @include sm {
+        padding: 44px;
+        width: 100%;
+        justify-content: center;
+    }
+}

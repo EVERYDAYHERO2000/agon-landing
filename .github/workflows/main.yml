@@ -32,6 +32,7 @@ jobs:
           git branch -l
           git checkout -b gh-pages
           git branch -l
+          npm i fsevents -D
           npm install
           npm production
           mv dist/* .

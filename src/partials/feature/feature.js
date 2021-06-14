@@ -10,11 +10,11 @@ export const renderFeature = () => {
 
         $card.append($shadow);
 
-        window.addEventListener('mousemove', (e)=> {
-            if (e.target.classList.contains('card')){
+        $card.addEventListener('mousemove', (e)=> {
+            
                 $shadow.style.top = e.layerY + 'px';
                 $shadow.style.left = e.layerX + 'px';
-            }
+            
         });
     }
     */

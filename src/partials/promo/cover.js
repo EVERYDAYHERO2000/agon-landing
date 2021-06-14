@@ -78,13 +78,13 @@ export const renderCover = () => {
     function initListeners() {
       window.addEventListener("wheel", (e) => {
         //if (browser.parsedResult.browser.name !== 'Safari') {
-
+        if (animTrigger) {
             if (e.deltaY > 0) {
             setTargetProgress(targetProgress + 1 / 20);
             } else {
             setTargetProgress(targetProgress - 1 / 20);
             }
-
+        }    
         //}
         
         

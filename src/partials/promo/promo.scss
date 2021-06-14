@@ -3,6 +3,8 @@
     overflow: hidden;
     margin-bottom: -15vh;
     background-position: center;
+    background-image:url(assets/cover/cover_placeholder.png);
+    background-size: cover;
 
     @include sm {
         margin-bottom: 0;

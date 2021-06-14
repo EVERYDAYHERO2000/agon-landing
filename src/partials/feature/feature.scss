@@ -5,6 +5,7 @@
     min-height: 150vh;
     z-index: 3;
     margin-bottom: 10vh;
+    pointer-events: none;
 
     @include sm {
         display: block;
@@ -15,12 +16,17 @@
         margin-bottom: 0;
     }
 
+    .card {
+        pointer-events: all;
+        overflow: hidden;
+    }
+
     .screen {
 
     }
 
     h2 {
-        font-size: 2.5vw;
+        font-size: 2.3vw;
         line-height: 1.3;
         margin: 0 0 2vw 0;
 

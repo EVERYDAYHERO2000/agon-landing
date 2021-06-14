@@ -1,0 +1,24 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    padding-bottom: 24px;
+
+    span, a {
+        margin: 8px;
+        padding: 8px;
+    }
+
+    a {
+        color: $color-content;
+    }
+
+    span {
+        opacity: 0.3;
+    }
+
+    @include sm {
+        flex-direction: column;
+    }
+}

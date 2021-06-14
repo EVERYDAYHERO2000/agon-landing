@@ -1,0 +1,23 @@
+.vignette {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: block;
+    pointer-events: none;
+    z-index: 1000;
+    top:0;
+    left:0;
+  }
+  
+  .vignette:after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: radial-gradient(circle, transparent 50%, rgba(0, 0, 0, 0.6) 150%);
+
+    @include sm {
+        background: none;
+        content: none;
+    }
+  }
+  

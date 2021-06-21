@@ -1,0 +1,63 @@
+.rewards {
+    margin-top: 70vh;
+    position: relative;
+
+    @include sm {
+        margin-top: 88px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    &__content {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 6vw;
+        text-align: center;
+
+        @include sm {
+            padding: 0 44px;
+        }
+
+        h2 {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    &__decoration {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include sm {
+            width: 850px;
+            margin-top: 48px;
+            animation: scroll 15s linear forwards infinite;
+        }
+    }
+
+    &__card {
+        display: block;
+        margin: 0 4px;
+        height: 30vw;
+        max-height: 400px;
+
+        @include sm {
+            height: auto;
+            width: 50%;
+        }
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(calc(-850px + 100vw));
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}

@@ -15,10 +15,6 @@
 /* Mobile css query */
 @import 'scss/base/mobile';
 
-/* Vendor */
-
-/* Components */
-
 /* Browser specific styles */
 @import 'scss/dirty/hacks';
 
@@ -37,6 +33,7 @@
 @import 'partials/feature/feature.scss';
 @import 'partials/card/card.scss';
 @import 'partials/screen/screen.scss';
+@import 'partials/rewards/rewards.scss';
 @import 'partials/contact-us/contact-us.scss';
 @import 'partials/button/button.scss';
 @import 'partials/vignette/vignette.scss';

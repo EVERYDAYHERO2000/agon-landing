@@ -17,6 +17,8 @@ const environment = require('./configuration/environment');
 const templateFiles = fs.readdirSync(environment.paths.source)
   .filter((file) => path.extname(file).toLowerCase() === '.html');
 
+  console.log('>>>>',templateFiles);
+
 const htmlPluginEntries = templateFiles.map((template) => new HTMLWebpackPlugin({
   inject: true,
   hash: false,

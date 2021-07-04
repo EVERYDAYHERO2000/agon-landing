@@ -21,8 +21,15 @@ export const renderCover = () => {
 
   function App() {
     const images = [
+      /*
       { src: "assets/cover/cover_2.png" },  
       { src: "assets/cover/cover_1.png" }
+      */
+      { src: "assets/cover/cover_2.jpg" },
+      { src: "assets/cover/cover_1.jpg" },
+      { src: "assets/cover/cover_3.jpg" },
+      { src: "assets/cover/cover_4.jpg" },
+      { src: "assets/cover/cover_5.jpg" }
     ];
 
     let three, scene;

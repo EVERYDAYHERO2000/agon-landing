@@ -16,9 +16,7 @@ const environment = require('./configuration/environment');
 
 const templateFiles = fs.readdirSync(environment.paths.source)
   .filter((file) => path.extname(file).toLowerCase() === '.html');
-
-  console.log('>>>>',templateFiles);
-
+  
 const htmlPluginEntries = templateFiles.map((template) => new HTMLWebpackPlugin({
   inject: true,
   hash: false,
@@ -54,7 +52,7 @@ module.exports = {
             options: {
               name: 'images/design/[name].[hash:6].[ext]',
               publicPath: '../',
-              limit: environment.limits.images,
+              //limit: environment.limits.images,
             },
           },
         ],
@@ -67,7 +65,7 @@ module.exports = {
             options: {
               name: 'fonts/[name].[hash:6].[ext]',
               publicPath: '../',
-              limit: environment.limits.fonts,
+              //limit: environment.limits.fonts,
             },
           },
         ],

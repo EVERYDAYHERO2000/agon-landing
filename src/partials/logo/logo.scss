@@ -2,7 +2,21 @@
     height: 84px;
     fill: #D5FC51;
 
+    will-change: opacity;
+    opacity: 0;
+    animation: showIn .5s 4s forwards;
+
     @include sm {
         height: 64px;
+    }
+
+    @keyframes showIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
     }
 }

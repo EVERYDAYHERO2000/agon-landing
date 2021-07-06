@@ -59,6 +59,9 @@
         align-items: center;
         justify-content: center;
         pointer-events: all;
+
+        opacity: 0;
+        animation: showIn .3s 3s forwards;
         
         .button {
             margin: 0 16px;
@@ -86,6 +89,48 @@
     }
 
     h1 {
+        span {
+            display: inline-block;
+            max-width: 0;
+            overflow: hidden;
+            animation: cutIn .01s forwards;
 
+            &:nth-child(1) {
+                animation-delay: 1s;
+            }
+            &:nth-child(2) {
+                animation-delay: 1.5s;
+            }
+            &:nth-child(3) {
+                animation-delay: 2s;
+            }
+            &:nth-child(4) {
+                animation-delay: 2.33s;
+            }
+        
+        }
+        @include sm {
+            line-height: 1;
+        }
+    }
+
+    @keyframes showIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes cutIn {
+        0% {
+            max-width: 0;
+        }
+
+        100% {
+            max-width: 10000px;
+        }
     }
 }

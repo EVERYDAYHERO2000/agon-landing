@@ -21,15 +21,10 @@ export const renderCover = () => {
 
   function App() {
     const images = [
-      /*
-      { src: "assets/cover/cover_2.png" },  
-      { src: "assets/cover/cover_1.png" }
-      */
-      { src: "assets/cover/cover_2.jpg" },
-      { src: "assets/cover/cover_1.jpg" },
-      { src: "assets/cover/cover_3.jpg" },
-      { src: "assets/cover/cover_4.jpg" },
-      { src: "assets/cover/cover_5.jpg" }
+      { src: "assets/cover/cover_7.jpg" },
+      { src: "assets/cover/cover_2.jpg" },  
+      { src: "assets/cover/cover_6.jpg" },
+      { src: "assets/cover/cover_5.jpg" },
     ];
 
     let three, scene;
@@ -38,6 +33,7 @@ export const renderCover = () => {
       $canvas = document.getElementById("cover"),
       targetProgress = 0,
       prevent = 1,
+      interact = false,
       center = new Vector2(),
       animTrigger = (window.scrollY > windowHeight) ? false : true,
       windowWidth = window.innerWidth,
@@ -57,6 +53,11 @@ export const renderCover = () => {
         initListeners();
         $canvas.classList.add("promo__canvas_visible--true");
         requestAnimationFrame(animate);
+        navNext();
+
+        setInterval(()=>{
+          if (!interact && window.scrollY < windowHeight) navNext();
+        },4000);
       });
     }
 
@@ -91,6 +92,7 @@ export const renderCover = () => {
             } else {
             setTargetProgress(targetProgress - 1 / 20);
             }
+            autoAnimateDelay();
         }    
         //}
         
@@ -107,6 +109,9 @@ export const renderCover = () => {
         } else {
           navNext();
         }
+
+        autoAnimateDelay();
+        
       });
 
       document.addEventListener("keyup", (e) => {
@@ -115,7 +120,16 @@ export const renderCover = () => {
         } else if (e.keyCode === 39 || e.keyCode === 40) {
           navNext();
         }
+        autoAnimateDelay();
       });
+    }
+
+    function autoAnimateDelay() {
+      interact = true;
+
+        setTimeout(()=>{
+          if (interact) interact = false;
+        },3000);
     }
 
     function navNext() {

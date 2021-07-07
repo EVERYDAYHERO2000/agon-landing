@@ -8,4 +8,5 @@ export const renderHeader = () => {
     }
 
     $header.innerHTML = newHeaderHtml;
+    $header.removeAttribute("style");
 }

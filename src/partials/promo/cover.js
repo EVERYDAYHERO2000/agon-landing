@@ -21,10 +21,10 @@ export const renderCover = () => {
 
   function App() {
     const images = [
-      { src: "assets/cover/cover_7.jpg" },
-      { src: "assets/cover/cover_2.jpg" },  
-      { src: "assets/cover/cover_6.jpg" },
-      { src: "assets/cover/cover_5.jpg" },
+      { src: "assets/cover/cover_7.png" },
+      { src: "assets/cover/cover_2.png" },  
+      { src: "assets/cover/cover_6.png" },
+      { src: "assets/cover/cover_5.png" },
     ];
 
     let three, scene;

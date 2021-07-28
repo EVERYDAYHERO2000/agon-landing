@@ -62,6 +62,15 @@
     <main class="page__inner">
       <svg class="assets-defs">
         <defs>
+          <pattern id="def-screen-1" patternUnits="userSpaceOnUse" x="180" y="339" width="1171" height="2526" >
+            <image href="assets/screens/screen_1.png" x="0" y="0" width="1171" height="2526" />
+          </pattern>
+          <pattern id="def-screen-2" patternUnits="userSpaceOnUse" x="180" y="339" width="1171" height="2526" >
+            <image href="assets/screens/screen_2.png" x="0" y="0" width="1171" height="4924" />
+          </pattern>
+          <pattern id="def-screen-3" patternUnits="userSpaceOnUse" x="180" y="339" width="1171" height="2526" >
+            <image href="assets/screens/screen_3.png" x="0" y="0" width="1171" height="4933" />
+          </pattern>
           <pattern
             id="def-iphone-pattern"
             patternContentUnits="objectBoundingBox"
@@ -218,25 +227,7 @@
             <div class="screen__inner">
               <svg viewBox="0 0 1530 3049">
                 <use href="#def-spinner" />
-                <foreignObject
-                  class="screen__node"
-                  x="180"
-                  y="339"
-                  width="1171"
-                  height="2526"
-                >
-                  <div class="screen__screenshot">
-                    <img
-                      src="assets/screens/screen_1.png"
-                      class="screen__image"
-                    />
-                    <img
-                      loading="lazy"
-                      src="assets/ui-white.png"
-                      class="screen__ui"
-                    />
-                  </div>
-                </foreignObject>
+                <rect fill="url(#def-screen-1)" x="180" y="339" width="1171" height="2526" />
                 <use href="#def-iphone" />
               </svg>
               <div class="screen__shadow"></div>
@@ -265,25 +256,7 @@
             <div class="screen__inner">
               <svg viewBox="0 0 1530 3049">
                 <use href="#def-spinner" />
-                <foreignObject
-                  class="screen__node"
-                  x="180"
-                  y="339"
-                  width="1171"
-                  height="2526"
-                >
-                <div class="screen__screenshot">
-                    <img
-                      src="assets/screens/screen_2.png"
-                      class="screen__image"
-                    />
-                    <img
-                      loading="lazy"
-                      src="assets/ui-black.png"
-                      class="screen__ui"
-                    />
-                  </div>
-                </foreignObject>
+                <rect fill="url(#def-screen-2)" x="180" y="339" width="1171" height="2526" />
                 <use href="#def-iphone" />
               </svg>
               <div class="screen__shadow"></div>
@@ -311,25 +284,7 @@
             <div class="screen__inner">
               <svg viewBox="0 0 1530 3049">
                 <use href="#def-spinner" />
-                <foreignObject
-                  class="screen__node"
-                  x="180"
-                  y="339"
-                  width="1171"
-                  height="2526"
-                >
-                <div class="screen__screenshot">
-                    <img
-                      src="assets/screens/screen_3.png"
-                      class="screen__image"
-                    />
-                    <img
-                      loading="lazy"
-                      src="assets/ui-black.png"
-                      class="screen__ui"
-                    />
-                  </div>
-                </foreignObject>
+                <rect fill="url(#def-screen-3)" x="180" y="339" width="1171" height="2526" />
                 <use href="#def-iphone" />
               </svg>
               <div class="screen__shadow"></div>
